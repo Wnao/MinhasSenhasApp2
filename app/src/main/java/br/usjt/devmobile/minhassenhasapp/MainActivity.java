@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
 
         } else{
-            Toast.makeText(this, "Usuário oou senha incorretos!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Usuário ou senha estão incorretos!", Toast.LENGTH_SHORT).show();
         }
 
       //   Intent intent = new Intent(this, ListaSenhasActivity.class);
