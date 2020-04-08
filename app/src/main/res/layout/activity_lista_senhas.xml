@@ -7,6 +7,12 @@
     android:layout_height="match_parent"
     tools:context=".ListaSenhasActivity">
 
+    <ListView
+        android:fastScrollEnabled="true"
+        android:id="@+id/senhasListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"

@@ -11,6 +11,9 @@
         android:theme="@style/AppTheme">
         <activity android:name=".CadastroUsuarioActivity"></activity>
         <activity android:name=".ListaSenhasActivity" />
+        <activity android:name=".DetalhesSenhaActivity"></activity>
+        <activity android:name=".CadastroUsuarioActivity" />
+        <activity android:name=".ListasSenhasActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
