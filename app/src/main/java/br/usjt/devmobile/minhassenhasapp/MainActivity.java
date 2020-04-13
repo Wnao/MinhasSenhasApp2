@@ -17,7 +17,6 @@ public class MainActivity extends AppCompatActivity {
     private TextInputEditText usuario;
     private TextInputEditText senha;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
         usuario = findViewById(R.id.emailEditTextInput);
         senha = findViewById(R.id.passwordEditTextInput);
+
     }
 
     public void fazerLogin(View view){
@@ -33,26 +33,27 @@ public class MainActivity extends AppCompatActivity {
 
 
         if(usuario.getText().toString().equals(Hawk.get("usuario")) &&
-                senha.getText().toString().equals(Hawk.get("senha"))) {
+            senha.getText().toString().equals(Hawk.get("senha"))){
 
-            Intent intent = new Intent(this, ListaSenhasActivity.class);
+            Intent intent = new Intent(this, ListasSenhasActivity.class);
             startActivity(intent);
-
-        } else{
-            Toast.makeText(this, "Usuário ou senha estão incorretos!", Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(this,"Usuário ou senha incorretos!",Toast.LENGTH_SHORT).show();
         }
 
-      //   Intent intent = new Intent(this, ListaSenhasActivity.class);
-      //   startActivity(intent);
+
+
     }
 
     public void novoCadastro(View view){
 
-        if (Hawk.contains("usuario")){
-            Toast.makeText(this,"Usuário já cadastrado", Toast.LENGTH_SHORT).show();
-        }else {
+        if(Hawk.contains("usuario")){
+            Toast.makeText(this,"Usuário já cadastrado!",Toast.LENGTH_SHORT).show();
+        }else{
             Intent intent = new Intent(this, CadastroUsuarioActivity.class);
             startActivity(intent);
         }
+
+
     }
 }
