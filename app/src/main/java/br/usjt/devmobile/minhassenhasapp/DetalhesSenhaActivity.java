@@ -6,6 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.widget.Toast;
 
 public class DetalhesSenhaActivity extends AppCompatActivity {
 
@@ -45,6 +48,29 @@ public class DetalhesSenhaActivity extends AppCompatActivity {
         intent.putExtra("senha",senha);
         startActivity(intent);
         finish();
+    }
+
+    public void open(View view){
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+        alertDialogBuilder.setMessage("Deseja deletar");
+                alertDialogBuilder.setPositiveButton("sim",
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface arg0, int arg1) {
+                                Toast.makeText(MainActivity.this,"Você clicou sim
+                                        button",Toast.LENGTH_LONG).show();
+                            }
+                        });
+
+        alertDialogBuilder.setNegativeButton("Não",new DialogInterface.OnClickListener() {
+            Override
+            public void onClick(DialogInterface dialog, int which) {
+                finish();
+            }
+        });
+
+        AlertDialog alertDialog = alertDialogBuilder.create();
+        alertDialog.show();
     }
 
     public void fecharTela(View view) {
